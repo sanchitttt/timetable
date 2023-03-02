@@ -1,0 +1,91 @@
+[{
+        "courseCode": "CA101",
+        "courseTitle": "SOLVING AND PROGRAMMING IN C",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA103",
+        "courseTitle": "LOGICAL ORGANIZATIONS OF COMPUTERS",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "MT123",
+        "courseTitle": "BUSINESS COMMUNICATIONS ",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "inactive"
+    },
+    {
+        "courseCode": "CE101",
+        "courseTitle": "ENVIRONMENTAL SCIENCE",
+        "credits": {
+            "amount": 2,
+            "L": 2,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "inactive"
+    },
+    {
+        "courseCode": "CA104",
+        "courseTitle": "MATHEMATICS-I (ELEMENTARY MATHEMATICS)",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA104",
+        "courseTitle": "MATHEMATICS-I (ELEMENTARY MATHEMATICS)",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    }
+]

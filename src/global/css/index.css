@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'League Spartan', sans-serif;
+}
+
+.desktop-navbar {}
+
+@media screen and (max-width:968px) {
+    .desktop-navbar {
+        display: none;
+    }
+    .mobile-navbar{
+        display: block;
+    }
+}
+
+@media screen and (min-width:968px) {
+    .desktop-navbar {
+        display: block;
+    }
+    .mobile-navbar{
+        display: none;
+    }
+}

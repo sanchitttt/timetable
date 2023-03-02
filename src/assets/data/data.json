@@ -1,0 +1,228 @@
+[{
+    "id": "SES",
+    "picture": "https://imgs.search.brave.com/YM_sGs6i48GeL3PE6z9GiUM03PHX5g8XLPEoKuQ9Rmk/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly9kbTBx/eDh0MGk5Z2M5LmNs/b3VkZnJvbnQubmV0/L3RodW1ibmFpbHMv/dmlkZW8vRXl2RjBq/a1BnL3ZpZGVvYmxv/Y2tzLXBvcnRyYWl0/LW9mLXlvdW5nLXN1/Y2Nlc3NmdWwtZmVt/YWxlLWVtcGxveWVl/LWFzaWFuLXdvbWFu/LWVudHJlcHJlbmV1/ci13b3JrZXItaW4t/YnVzeS1vZmZpY2Ut/bG9va3MtYXQtY2Ft/ZXJhLXNtaWxlX2hh/am9qX2Z5el90aHVt/Ym5haWwtMTA4MF8w/MS5wbmc",
+    "createdAt": "2021-08-18",
+    "paymentDue": "2021-08-19",
+    "description": "Re-branding",
+    "paymentTerms": 1,
+    "clientName": "Seema Sharma",
+    "clientEmail": "seema@gmail.com",
+
+    "status": "paid",
+    "senderAddress": {
+      "street": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "clientAddress": {
+      "street": "106 Kendell Street",
+      "city": "Sharrington",
+      "postCode": "NR24 5WQ",
+      "country": "United Kingdom"
+    },
+    "items": [{
+      "name": "Brand Guidelines",
+      "quantity": 1,
+      "price": 1800.90,
+      "total": 1800.90
+    }],
+    "total": 1800.90,
+    "totalSubjectsTaught": 5,
+    "department" : ""
+  },
+  {
+    "id": "ANJ",
+    "createdAt": "2021-08-21",
+    "paymentDue": "2021-09-20",
+    "description": "Graphic Design",
+    "paymentTerms": 30,
+    "clientName": "Anurag Joshi",
+    "clientEmail": "anuragjoshi@mail.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "clientAddress": {
+      "street": "84 Church Way",
+      "city": "Bradford",
+      "postCode": "BD1 9PB",
+      "country": "United Kingdom"
+    },
+    "items": [{
+        "name": "Banner Design",
+        "quantity": 1,
+        "price": 156.00,
+        "total": 156.00
+      },
+      {
+        "name": "Email Design",
+        "quantity": 2,
+        "price": 200.00,
+        "total": 400.00
+      }
+    ],
+    "total": 556.00,
+    "totalSubjectsTaught": 4
+  },
+  {
+    "id": "SKR",
+    "createdAt": "2021-09-24",
+    "paymentDue": "2021-10-01",
+    "description": "Aruna Malik",
+    "paymentTerms": 7,
+    "clientName": "Sanjay Kumar",
+    "clientEmail": "sanjaykumar@myco.com",
+    "status": "paid",
+    "senderAddress": {
+      "street": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "clientAddress": {
+      "street": "79 Dover Road",
+      "city": "Westhall",
+      "postCode": "IP19 3PF",
+      "country": "United Kingdom"
+    },
+    "items": [{
+      "name": "Website Redesign",
+      "quantity": 1,
+      "price": 14002.33,
+      "total": 14002.33
+    }],
+    "total": 556.00,
+    "totalSubjectsTaught": 3
+  },
+  {
+    "id": "ASP",
+    "createdAt": "2021-10-11",
+    "paymentDue": "2021-10-12",
+    "description": "Logo Concept",
+    "paymentTerms": 1,
+    "clientName": "Asha Prasad",
+    "clientEmail": "ashaprasad@gmail.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "clientAddress": {
+      "street": "63 Warwick Road",
+      "city": "Carlisle",
+      "postCode": "CA20 2TG",
+      "country": "United Kingdom"
+    },
+    "items": [{
+      "name": "Logo Sketches",
+      "quantity": 1,
+      "price": 102.04,
+      "total": 102.04
+    }],
+    "total": 556.00,
+    "totalSubjectsTaught": 5
+  },
+  {
+    "id": "SMK",
+    "createdAt": "2021-10-7",
+    "paymentDue": "2021-10-14",
+    "description": "Re-branding",
+    "paymentTerms": 7,
+    "clientName": "Sadhu Malik",
+    "clientEmail": "sadhumalik@example.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "clientAddress": {
+      "street": "46 Abbey Row",
+      "city": "Cambridge",
+      "postCode": "CB5 6EG",
+      "country": "United Kingdom"
+    },
+    "items": [{
+        "name": "New Logo",
+        "quantity": 1,
+        "price": 1532.33,
+        "total": 1532.33
+      },
+      {
+        "name": "Brand Guidelines",
+        "quantity": 1,
+        "price": 2500.00,
+        "total": 2500.00
+      }
+    ],
+    "total": 556.00,
+    "totalSubjectsTaught": 3
+  },
+  {
+    "id": "SMJ",
+    "createdAt": "2021-10-01",
+    "paymentDue": "2021-10-31",
+    "description": "Landing Page Design",
+    "paymentTerms": 30,
+    "clientName": "Smitha Jha",
+    "clientEmail": "smithajain@gmail.com",
+    "status": "pending",
+    "senderAddress": {
+      "street": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "clientAddress": {
+      "street": "3964  Queens Lane",
+      "city": "Gotham",
+      "postCode": "60457",
+      "country": "United States of America"
+    },
+    "items": [{
+      "name": "Web Design",
+      "quantity": 1,
+      "price": 6155.91,
+      "total": 6155.91
+    }],
+    "total": 556.00,
+    "totalSubjectsTaught": 5
+  },
+  {
+    "id": "PTS",
+    "createdAt": "2021-11-05",
+    "paymentDue": "2021-11-12",
+    "description": "Logo Re-design",
+    "paymentTerms": 7,
+    "clientName": "Priti Sharma",
+    "clientEmail": "pritisharma@gmail.com",
+    "status": "draft",
+    "senderAddress": {
+      "street": "19 Union Terrace",
+      "city": "London",
+      "postCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "clientAddress": {
+      "street": "",
+      "city": "",
+      "postCode": "",
+      "country": ""
+    },
+    "items": [{
+      "name": "Logo Re-design",
+      "quantity": 1,
+      "price": 3102.04,
+      "total": 3102.04
+    }],
+    "total": 3102.04,
+    "totalSubjectsTaught": 4
+  }
+]
