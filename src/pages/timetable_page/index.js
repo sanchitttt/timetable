@@ -7,6 +7,7 @@ function TimetablePage() {
         <div>
             <DesktopNavbar />
             <MobileNavbar />
+            
         </div>
     )
 }

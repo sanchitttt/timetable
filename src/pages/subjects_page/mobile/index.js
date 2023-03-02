@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import TextField from '../../../common/inputs/TextField';
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
+import { searchSubjectByQuery } from '../../../utils';
 import InvoicesHeading from '../../components/PageHeading';
 import SubjectsBox from '../../components/subjectsBox';
 
 function MobileDesktop({ subjects }) {
-    const [data, setData] = useState(subjects);
+    const [viewableData, setViewableData] = useState(subjects);
     const [value, setValue] = useState('');
 
     useEffect(() => {
-
-    }, []);
-
+        searchSubjectByQuery(value,subjects,setViewableData);
+    }, [value]);
     return (
         <div>
             <MobileNavbar />
@@ -19,7 +19,7 @@ function MobileDesktop({ subjects }) {
                 <div className='mt-[20px] w-[327px] flex justify-center'>
                     <InvoicesHeading
                         buttonText='Add subject'
-                        amount={data.length}
+                        amount={viewableData.length}
                         subHeading='Subjects'
                     >Subjects</InvoicesHeading>
                 </div>
@@ -30,7 +30,7 @@ function MobileDesktop({ subjects }) {
                         placeholder='Search by course name, code or semester'
                     />
                 </div>
-                {data.map((subject) => {
+                {viewableData.map((subject) => {
                     return <SubjectsBox
                         key={subject.courseCode}
                         courseCode={subject.courseCode}

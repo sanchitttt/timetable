@@ -12,7 +12,11 @@ function SubjectsBox({ courseCode, courseTitle, classSchedulePerWeek, className,
     const { themeValue } = Theme;
 
     return (
-        <div className={`p-[20px] w-[300px] h-[200px] justify-between gap-[10px] flex flex-col ${themeValue === 'dark' ? "bg-03" : "bg-[#fff]"} rounded-[8px]`}>
+        <div
+            role={'button'}
+            style={{ overflowY: 'scroll' }}
+            className={`p-[20px]  w-[300px] h-[200px] justify-between gap-[10px] flex flex-col ${themeValue === 'dark' ? "bg-03" : "bg-[#fff]"} rounded-[8px]`}
+        >
             <Text18px bold>{courseTitle}</Text18px>
             <Text15px color={themeValue === 'dark' ? '05' : '07'} bold>{courseCode} ({className}-{semesterLevel})</Text15px>
             <Text13px color={themeValue === 'dark' ? '05' : '07'}>{classSchedulePerWeek} classes per week</Text13px>
