@@ -1,4 +1,5 @@
-[{
+[
+    {
         "courseCode": "CA101",
         "courseTitle": "SOLVING AND PROGRAMMING IN C",
         "credits": {
@@ -74,8 +75,53 @@
         "status": "active"
     },
     {
-        "courseCode": "CA104",
-        "courseTitle": "MATHEMATICS-I (ELEMENTARY MATHEMATICS)",
+        "courseCode": "180",
+        "courseTitle": " OFFICE AUTOMATION TOOLS ",
+        "credits": {
+            "amount": 2,
+            "L": 3,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA155",
+        "courseTitle": "DATA STRUCTURES",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "1",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA157",
+        "courseTitle": " DISCRETE STRUCTURES",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA160",
+        "courseTitle": "OPERATING SYSTEM CONCEPTS",
         "credits": {
             "amount": 3,
             "L": 3,
@@ -84,7 +130,607 @@
         },
         "classSchedulePerWeek": "03",
         "class": "BCA",
-        "semesterLevel": "1",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA158",
+        "courseTitle": "NUMERICAL AND STATISTICAL METHODS",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA156",
+        "courseTitle": "DATA STRUCTURES LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA161",
+        "courseTitle": "OPERATING SYSTEM LAB",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA159",
+        "courseTitle": "NUMERICAL AND STATISTICAL METHODS LAB",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA326",
+        "courseTitle": "Unix and Shell Programming Lab",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA181",
+        "courseTitle": "DESIGNING AND PUBLISHING IN COMPUTER USING PAGEMAKER,zPHOTOSHOP AND CORELDRAW LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "2",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA201",
+        "courseTitle": "OBJECT ORIENTED PROGRAMMING USING JAVA",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "3",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA203",
+        "courseTitle": "DATABASE MANAGEMENT SYSTEMS",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "3",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA202",
+        "courseTitle": "OBJECT ORIENTED PROGRAMMING USING JAVA LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "3",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA204",
+        "courseTitle": "DATABASE MANAGEMENT SYSTEMS LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "3",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA220",
+        "courseTitle": "INTERNET TECHNOLOGIES",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "3",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA221",
+        "courseTitle": "INTERNET TECHNOLOGIES LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "3",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA222",
+        "courseTitle": "MOBILE APPLICATION",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "3",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA255",
+        "courseTitle": "FUNDAMENTALS OF COMPUTER ALGORITHMS",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA256",
+        "courseTitle": "WEB PROGRAMMING",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA257",
+        "courseTitle": "WEB PROGRAMMING LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA259",
+        "courseTitle": "SOFTWARE ENGINEERING LAB",
+        "credits": {
+            "amount": 2,
+            "L": 2,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA223",
+        "courseTitle": "ECOMMERCE TECHNOLOGY",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA271",
+        "courseTitle": "Soft Computing and Applications",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA272",
+        "courseTitle": "Soft Computing using MATLAB /SCI LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 4
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA224",
+        "courseTitle": "CLOUD COMPUTING",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA276",
+        "courseTitle": "Android Programming Lab",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "4",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA301",
+        "courseTitle": "COMPUTER GRAPHICS AND MULTIMEDIA",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA303",
+        "courseTitle": "COMPUTER NETWORKS",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA304",
+        "courseTitle": "MANAGEMENT INFORMATION SYSTEMS",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA302",
+        "courseTitle": "COMPUTER GRAPHICS LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA277",
+        "courseTitle": "Python Programming",
+        "credits": {
+            "amount": 4,
+            "L": 0,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA278",
+        "courseTitle": "Python Programming Lab",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 4
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA320",
+        "courseTitle": "Software Testing",
+        "credits": {
+            "amount": 3,
+            "L": 1,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA321",
+        "courseTitle": "SOFTWARE TESTING LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA322",
+        "courseTitle": "NETWORK SECURITY",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA380",
+        "courseTitle": "TALLY SOFTWARE (ACCOUNTING AND FINANCETALLY ERP)",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA381",
+        "courseTitle": "PHOTO SHOP LAB",
+        "credits": {
+            "amount": 2,
+            "L": 0,
+            "T": 0,
+            "P": 2
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "5",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA355",
+        "courseTitle": "DATA MINING",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "6",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA356",
+        "courseTitle": "DISTRIBUTED COMPUTING",
+        "credits": {
+            "amount": 3,
+            "L": 3,
+            "T": 0,
+            "P": 0
+        },
+        "classSchedulePerWeek": "03",
+        "class": "BCA",
+        "semesterLevel": "6",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA323",
+        "courseTitle": "CYBER FORENSICS",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "6",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA325",
+        "courseTitle": "UNIX AND SHELL PROGRAMMING",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "6",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA327",
+        "courseTitle": "System Programming",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "6",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA328",
+        "courseTitle": "DISTRIBUTED DATABASE SYSTEMS",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "6",
+        "branch": "Bachelor of Computer Applications",
+        "status": "active"
+    },
+    {
+        "courseCode": "CA331",
+        "courseTitle": "DECISION SUPPORT SYSTEM",
+        "credits": {
+            "amount": 4,
+            "L": 3,
+            "T": 1,
+            "P": 0
+        },
+        "classSchedulePerWeek": "04",
+        "class": "BCA",
+        "semesterLevel": "6",
         "branch": "Bachelor of Computer Applications",
         "status": "active"
     }
