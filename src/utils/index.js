@@ -3,7 +3,16 @@ export const searchSubjectByQuery = (value, subjects, setViewableData) => {
         const filtered = subjects.filter((item) => {
             const { courseCode, courseTitle, class: className, semesterLevel } = item;
             const regex = new RegExp(value, 'gi');
-            if (courseCode.match(regex) || courseTitle.match(regex) || semesterLevel.match(regex) || className.match(regex)) {
+            if (courseCode && courseCode.match(regex)) {
+                return item;
+            }
+            else if (className && className.match(regex)) {
+                return item;
+            }
+            else if (courseTitle && courseTitle.match(regex)) {
+                return item;
+            }
+            else if (semesterLevel && semesterLevel.match(regex)) {
                 return item;
             }
         })
@@ -14,3 +23,15 @@ export const searchSubjectByQuery = (value, subjects, setViewableData) => {
     }
 }
 
+
+export function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+    }
+    return result;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TextField from '../../../common/inputs/TextField';
 import DesktopNavbar from '../../../common/navbar/DesktopNavbar';
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
-import { searchSubjectByQuery } from '../../../utils';
+import { makeid, searchSubjectByQuery } from '../../../utils';
 import NoRecords from '../../components/no_records_found';
 import InvoicesHeading from '../../components/PageHeading';
 import SubjectsBox from '../../components/subjectsBox';
@@ -12,8 +12,8 @@ function SubjectsDesktop({ subjects }) {
   const [viewableData, setViewableData] = useState(subjects);
 
   useEffect(() => {
-    searchSubjectByQuery(value,subjects,setViewableData);
-}, [value]);
+    searchSubjectByQuery(value, subjects, setViewableData);
+  }, [value]);
 
   return (
     <div className='relative flex justify-center item-center flex-col'>
@@ -26,7 +26,7 @@ function SubjectsDesktop({ subjects }) {
       </div>
 
       <div className='flex items-center justify-center flex flex-col mt-[25px]'>
-        <div className='desktop:w-[730px] biggerDesktops:w-[900px] justify-between'>
+        <div className='desktop:w-[730px] biggerDesktops:w-[1000px] justify-between'>
           <InvoicesHeading
             buttonText='Add subject'
             amount={subjects.length}
@@ -40,25 +40,33 @@ function SubjectsDesktop({ subjects }) {
             />
           </div>
 
-          <div className='mt-[25px] overflow-hidden grid biggerDesktops:grid-cols-3 desktop:grid-cols-2 gap-[20px]'>
-            {viewableData.map((subject, idx) => {
-              return <div key={subject.courseCode} className='overflow-hidden'>
-                <SubjectsBox
-                  courseCode={subject.courseCode}
-                  courseTitle={subject.courseTitle}
-                  classSchedulePerWeek={subject.classSchedulePerWeek}
-                  className={subject.class}
-                  branch={subject.branch}
-                  credits={subject.credits}
-                  semesterLevel={subject.semesterLevel}
-                  status={subject.status}
-                />
-              </div>
-            })}
+          <div className='h-[85vh]' style={{overflowY:'scroll'}}>
+            <div className='mt-[25px] grid biggerDesktops:grid-cols-3 desktop:grid-cols-2 gap-[20px]'>
+              {viewableData.map((subject, idx) => {
+                const uniqueId = makeid(subject.courseTitle.length)
+                return <div key={uniqueId} >
+                  <SubjectsBox
+                    id={uniqueId}
+                    courseCode={subject.courseCode}
+                    courseTitle={subject.courseTitle}
+                    classSchedulePerWeek={subject.classSchedulePerWeek}
+                    className={subject.class}
+                    branch={subject.branch}
+                    credits={subject.credits}
+                    semesterLevel={subject.semesterLevel}
+                    status={subject.status}
+                    setViewableData={setViewableData}
+                  />
+                </div>
+              })}
+            </div>
           </div>
-          {viewableData.length===0 && <NoRecords 
-          mainHeading={'No records found'}
-          subHeading={'Add subjects for them to show up here'}
+
+
+
+          {viewableData.length === 0 && <NoRecords
+            mainHeading={'No records found'}
+            subHeading={'Add subjects for them to show up here'}
           />}
         </div>
 
