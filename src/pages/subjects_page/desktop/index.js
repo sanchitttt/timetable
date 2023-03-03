@@ -43,10 +43,11 @@ function SubjectsDesktop({ subjects }) {
           <div className='h-[85vh]' style={{overflowY:'scroll'}}>
             <div className='mt-[25px] grid biggerDesktops:grid-cols-3 desktop:grid-cols-2 gap-[20px]'>
               {viewableData.map((subject, idx) => {
-                const uniqueId = makeid(subject.courseTitle.length)
-                return <div key={uniqueId} >
+                return <div 
+                key={subject.id} 
+                >
                   <SubjectsBox
-                    id={uniqueId}
+                    id={subject.id}
                     courseCode={subject.courseCode}
                     courseTitle={subject.courseTitle}
                     classSchedulePerWeek={subject.classSchedulePerWeek}
@@ -56,6 +57,7 @@ function SubjectsDesktop({ subjects }) {
                     semesterLevel={subject.semesterLevel}
                     status={subject.status}
                     setViewableData={setViewableData}
+                    viewableData={viewableData}
                   />
                 </div>
               })}

@@ -43,6 +43,7 @@ function MobileDesktop({ subjects }) {
                         credits={subject.credits}
                         semesterLevel={subject.semesterLevel}
                         status={subject.status}
+                        viewableData={viewableData}
                     />
                 })}
                 {/* <NoInvoices /> */}

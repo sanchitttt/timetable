@@ -8,14 +8,14 @@ import TextField from '../../../../common/inputs/TextField';
 import ThemeContext from '../../../../global/contexts/ThemeContext';
 import EditSubjectHeading from '../EditSubjectHeading';
 
-function EditSubjectBoxMobile({ id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, state }) {
+function EditSubjectBoxMobile({ id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status ,viewableData}) {
   const [subjectTitleState, setSubjectTitleState] = useState(subjectTitle);
   const [subjectCodeState, setSubjectCodeState] = useState(subjectCode);
   const [classesPerWeek, setClassesPerWeek] = useState(scheduledClassesPerWeek);
   const [classNameState, setClassNameState] = useState(className ? className : '');
   const [semesterLevelState, setSemesterLevelState] = useState(semesterLevel);
   const [branchState, setBranchState] = useState(branch);
-  const [statusState, setStatusState] = useState(state);
+  const [statusState, setStatusState] = useState(status);
 
   const Theme = useContext(ThemeContext);
   const { themeValue } = Theme;
@@ -89,8 +89,8 @@ function EditSubjectBoxMobile({ id, subjectTitle, subjectCode, scheduledClassesP
         onChange={(e) => setStatusState(e.target.value)}
         label={'Status'}
       >
-        <SelectItem value='Active' />
-        <SelectItem value='Inactive' />
+        <SelectItem value='active' />
+        <SelectItem value='inactive' />
       </Select>
       <div>
         <TextField

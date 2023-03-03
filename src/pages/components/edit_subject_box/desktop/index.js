@@ -7,27 +7,38 @@ import SelectItem from '../../../../common/inputs/SelectItem';
 import TextField from '../../../../common/inputs/TextField';
 import Text15px from '../../../../common/text/Text15px';
 import ThemeContext from '../../../../global/contexts/ThemeContext';
+import { saveChangesToSubjects } from '../../../../utils';
 import PageHeading from '../../PageHeading';
 import EditSubjectHeading from '../EditSubjectHeading';
 
-function EditSubjectBoxDesktop({ id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, state }) {
+function EditSubjectBoxDesktop({ id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData }) {
   const [subjectTitleState, setSubjectTitleState] = useState(subjectTitle);
   const [subjectCodeState, setSubjectCodeState] = useState(subjectCode);
   const [classesPerWeek, setClassesPerWeek] = useState(scheduledClassesPerWeek);
-  const [classNameState, setClassNameState] = useState(className?className:'');
+  const [classNameState, setClassNameState] = useState(className ? className : '');
   const [semesterLevelState, setSemesterLevelState] = useState(semesterLevel);
   const [branchState, setBranchState] = useState(branch);
-  const [statusState, setStatusState] = useState(state);
+  const [statusState, setStatusState] = useState(status);
 
   const Theme = useContext(ThemeContext);
   const { themeValue } = Theme;
 
-  const saveHandler = () => {
-
+  const saveHandler = (event) => {
+    saveChangesToSubjects({
+      id: id,
+      courseTitle: subjectTitleState,
+      courseCode: subjectCodeState,
+      classSchedulePerWeek: classesPerWeek,
+      className: className,
+      semesterLevel: semesterLevelState,
+      branch: branchState,
+      status: statusState
+    }, viewableData, setViewableData, closeModal, event
+    )
   }
 
   return (
-    <div style={{transform:'translate(-50%,-50%)'}} className={`absolute left-[50%] top-[50%] rounded-[8px] h-[800px] flex flex-col gap-[30px] w-[616px] bg-03 px-[30px] ${themeValue === 'dark' ? "bg-03" : "bg-[#fff]"}`}>
+    <div style={{ transform: 'translate(-50%,-50%)' }} className={`absolute left-[50%] top-[50%] rounded-[8px] h-[800px] flex flex-col gap-[30px] w-[616px] bg-03 px-[30px] ${themeValue === 'dark' ? "bg-03" : "bg-[#fff]"}`}>
       <div className='mt-[30px]'>
         <EditSubjectHeading>{subjectCode} - {subjectTitle} </EditSubjectHeading>
       </div>
@@ -92,8 +103,8 @@ function EditSubjectBoxDesktop({ id, subjectTitle, subjectCode, scheduledClasses
         onChange={(e) => setStatusState(e.target.value)}
         label={'Status'}
       >
-        <SelectItem value='Active' />
-        <SelectItem value='Inactive' />
+        <SelectItem value='active' />
+        <SelectItem value='inactive' />
       </Select>
       <div>
         <TextField

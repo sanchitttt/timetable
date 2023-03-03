@@ -35,3 +35,27 @@ export function makeid(length) {
     }
     return result;
 }
+
+/**
+ * @function saveChangesToSubjects
+ * @param {Object} details details containing all subject fields
+ * @param {Array[{}]} viewableData viewableData
+ * @param {Setter} setViewableData 
+ * @param {Function} closeModal 
+ * @param {HTMLEvent} event
+ */
+
+export function saveChangesToSubjects(details, viewableData, setViewableData,closeModal,event) {
+    const { id, courseTitle, courseCode, classSchedulePerWeek, className, semesterLevel, branch, status } = details;
+    if (courseTitle.length && courseCode.length && classSchedulePerWeek.length && className.length && semesterLevel.length && branch.length) {
+        for (let i = 0; i < viewableData.length; i++) {
+            if (viewableData[i].id === id) {
+                viewableData[i] = details;
+                viewableData[i].class = details.className;
+            }
+        }
+    }
+
+    setViewableData([...viewableData])
+    closeModal(event)
+}
