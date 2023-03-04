@@ -7,6 +7,7 @@ import TeacherIcon from '../TeacherIcon';
 import ThemeIcon from '../ThemeIcon';
 import { useNavigate } from 'react-router-dom';
 import TimetableIcon from '../TimetableIcon';
+import RoomsIcon from '../RoomsIcon';
 
 function DesktopNavbar() {
   const Theme = useContext(ThemeContext);
@@ -22,11 +23,14 @@ function DesktopNavbar() {
         <div onClick={() => navigate('/timetable')}>
           <TimetableIcon />
         </div>
-        <div onClick={() => navigate('/subjects')}> 
+        <div onClick={() => navigate('/rooms')}>
+          <RoomsIcon />
+        </div>
+        <div onClick={() => navigate('/subjects')}>
           <BooksIcon />
         </div>
-        <div onClick={() => navigate('/teachers')}> 
-        <TeacherIcon />
+        <div onClick={() => navigate('/teachers')}>
+          <TeacherIcon />
         </div>
         <ThemeIcon />
         <div className='w-[103px] h-[1px] bg-[#494E6E]'></div>

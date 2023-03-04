@@ -7,6 +7,7 @@ import ThemeIcon from '../ThemeIcon';
 import BooksIcon from '../BooksIcon';
 import { useNavigate } from 'react-router-dom';
 import TimetableIcon from '../TimetableIcon';
+import RoomsIcon from '../RoomsIcon';
 
 function MobileNavbar() {
   const Theme = useContext(ThemeContext);
@@ -21,6 +22,9 @@ function MobileNavbar() {
       <div className='flex items-center justify-between mr-[10px] gap-[25px]'>
         <div onClick={() => navigate('/timetable')}>
           <TimetableIcon />
+        </div>
+        <div onClick={() => navigate('/rooms')}>
+          <RoomsIcon />
         </div>
         <div
           onClick={() => navigate('/subjects')}

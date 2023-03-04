@@ -1,0 +1,47 @@
+import React, { useState } from 'react'
+
+const daysArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+const columns = ['Day', 'Branch', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
+
+function Table({ data }) {
+    const rowSpanLength = data[0][1].length + 1;
+    return (
+        <div className='flex flex-col border-t-[1px] border-r-[1px] border-l-[1px] text-[10px]'>
+            <div className='grid grid-cols-10'>
+                <div className='' >Day</div>
+                <div>Branch</div>
+                <div>1st</div>
+                <div>2nd</div>
+                <div>3rd</div>
+                <div>4th</div>
+                <div>5th</div>
+                <div>6th</div>
+                <div>7th</div>
+                <div >8th</div>
+            </div>
+            {data.map((item, idx) => {
+                return <div className='container flex border-b-[1px]'>
+                    <div className='leftSide w-[80px] border-r-[1px]'>
+                        {daysArr[idx]}
+                    </div>
+                    <div className='w-[100%]'>
+                        {item.map((eachItem, idx) => {
+                            return <div className={`grid grid-cols-9   ${idx !== item.length - 1 && 'border-b-[1px]'}`}>
+                                <div>{eachItem[0]}</div>
+                                {eachItem[1].map((scheduleItem) => {
+                                    return <div
+                                        className='border-l-[1px] h-[100%]'
+                                    >
+                                        {scheduleItem ? scheduleItem : 'FREE'}
+                                    </div>
+                                })}
+                            </div>
+                        })}
+                    </div>
+                </div>
+            })}
+        </div>
+    )
+}
+
+export default Table

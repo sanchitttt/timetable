@@ -7,13 +7,18 @@ body {
     font-family: 'League Spartan', sans-serif;
 }
 
-.desktop-navbar {}
+.width {
+    width:300px;
+    min-height:50px;
+}
+
 
 @media screen and (max-width:968px) {
     .desktop-navbar {
         display: none;
     }
-    .mobile-navbar{
+
+    .mobile-navbar {
         display: block;
     }
 }
@@ -22,7 +27,8 @@ body {
     .desktop-navbar {
         display: block;
     }
-    .mobile-navbar{
+
+    .mobile-navbar {
         display: none;
     }
 }

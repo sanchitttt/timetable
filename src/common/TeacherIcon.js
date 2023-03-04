@@ -4,7 +4,7 @@ function TeacherIcon() {
   return (
     <svg
       role='button'
-      xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#858BB2">
+      xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#858BB2">
       <g>
         <rect fill="none" height="24" width="24" />
       </g>

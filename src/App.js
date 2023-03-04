@@ -5,6 +5,7 @@ import TeachersPage from "./pages/teachers_page";
 import SubjectsPage from "./pages/subjects_page";
 import ViewInvoicePage from './pages/view_invoices'
 import TimetablePage from "./pages/timetable_page";
+import RoomsPage from "./pages/rooms_page";
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -23,6 +24,7 @@ function App() {
           <Route path='/subjects' element={<SubjectsPage />} />
           <Route path='/view/:id' element={<ViewInvoicePage />} /> 
           <Route path='/timetable' element={<TimetablePage />} /> 
+          <Route path='/rooms' element={<RoomsPage />} /> 
         </Routes>
       </ThemeContext.Provider>
     </div>
