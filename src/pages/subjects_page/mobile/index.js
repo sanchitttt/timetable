@@ -12,9 +12,10 @@ function MobileDesktop() {
     const [loading, setLoading] = useState(true);
     const Subjects = useContext(SubjectsContext);
     const { subjectValue, setSubjects } = Subjects;
+    const [viewableData,setViewableData] = useState(subjectValue)
 
     useEffect(() => {
-        searchSubjectByQuery(value, subjectValue, setSubjects);
+        searchSubjectByQuery(value, subjectValue, setViewableData);
     }, [value]);
 
     useEffect(() => {
@@ -28,7 +29,7 @@ function MobileDesktop() {
                 <div className='mt-[20px] w-[327px] flex justify-center'>
                     <InvoicesHeading
                         buttonText='Add subject'
-                        amount={subjectValue.length}
+                        amount={viewableData.length}
                         subHeading='Subjects'
                     >Subjects</InvoicesHeading>
                 </div>
@@ -39,7 +40,7 @@ function MobileDesktop() {
                         placeholder='Search by course name, code or semester'
                     />
                 </div>
-                {loading ? <CircularProgress /> : subjectValue.map((subject) => {
+                {loading ? <CircularProgress /> : viewableData.map((subject) => {
                     return <SubjectsBox
                         key={subject._id}
                         _id={subject._id}
