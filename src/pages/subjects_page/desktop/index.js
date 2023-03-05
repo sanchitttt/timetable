@@ -4,7 +4,7 @@ import TextField from '../../../common/inputs/TextField';
 import DesktopNavbar from '../../../common/navbar/DesktopNavbar';
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
 import SubjectsContext from '../../../global/contexts/SubjectsContext';
-import { makeid, searchSubjectByQuery } from '../../../utils';
+import { searchSubjectByQuery } from '../../../utils';
 import NoRecords from '../../components/no_records_found';
 import InvoicesHeading from '../../components/PageHeading';
 import SubjectsBox from '../../components/subjectsBox';
@@ -13,10 +13,11 @@ function SubjectsDesktop({ }) {
   const [value, setValue] = useState('');
   const Subjects = useContext(SubjectsContext);
   const { subjectValue, setSubjects } = Subjects;
+  const [viewableData, setViewableData] = useState(subjectValue);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    searchSubjectByQuery(value, subjectValue, setSubjects);
+    searchSubjectByQuery(value, subjectValue, setViewableData);
   }, [value]);
 
   useEffect(() => {
@@ -51,30 +52,30 @@ function SubjectsDesktop({ }) {
             <div className='w-[100%] h-[85vh] flex items-center justify-center' >
               <CircularProgress />
             </div>
-          :
-          <div className='h-[85vh]' style={{ overflowY: 'scroll' }}>
-            <div className='mt-[25px] grid biggerDesktops:grid-cols-3 desktop:grid-cols-2 gap-[20px]'>
-              {subjectValue.map((subject, idx) => {
-                return <div
-                  key={subject.id}
-                >
-                  <SubjectsBox
-                    _id={subject._id}
-                    courseCode={subject.courseCode}
-                    courseTitle={subject.courseTitle}
-                    classSchedulePerWeek={subject.classSchedulePerWeek}
-                    className={subject.class}
-                    branch={subject.branch}
-                    credits={subject.credits}
-                    semesterLevel={subject.semesterLevel}
-                    status={subject.status}
-                    setViewableData={setSubjects}
-                    viewableData={subjectValue}
-                  />
-                </div>
-              })}
+            :
+            <div className='h-[85vh]' style={{ overflowY: 'scroll' }}>
+              <div className='mt-[25px] grid biggerDesktops:grid-cols-3 desktop:grid-cols-2 gap-[20px]'>
+                {viewableData.map((subject, idx) => {
+                  return <div
+                    key={subject.id}
+                  >
+                    <SubjectsBox
+                      _id={subject._id}
+                      courseCode={subject.courseCode}
+                      courseTitle={subject.courseTitle}
+                      classSchedulePerWeek={subject.classSchedulePerWeek}
+                      className={subject.class}
+                      branch={subject.branch}
+                      credits={subject.credits}
+                      semesterLevel={subject.semesterLevel}
+                      status={subject.status}
+                      setViewableData={setSubjects}
+                      viewableData={subjectValue}
+                    />
+                  </div>
+                })}
+              </div>
             </div>
-          </div>
 
           }
           {subjectValue.length === 0 && !loading && <NoRecords

@@ -67,13 +67,15 @@ function TimetableDesktop() {
     const { roomsValue } = Rooms;
     const { subjectValue } = Subjects;
 
-    // console.log(markedSubjects)
     useEffect(() => {
         const res = generateInputForTimetable(markedSubjects);
         setInputArrState(res);
-    }, [markedSubjects])
+    }, [markedSubjects]);
+    
     useEffect(() => {
+        console.log(inputArrState,roomsValue,subjectValue)
         let res = generateTimetable(inputArrState, roomsValue, subjectValue)
+        console.log(res);
         setData(res)
     }, [inputArrState, roomsValue, subjectValue])
 

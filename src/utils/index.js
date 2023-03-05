@@ -1,6 +1,7 @@
 import { patchSubject } from "./apiCalls";
 
 export const searchSubjectByQuery = (value, subjects, setViewableData) => {
+    console.log(value,subjects,setViewableData)
     if (value.length) {
         const filtered = subjects.filter((item) => {
             const { courseCode, courseTitle, class: className, semesterLevel } = item;
