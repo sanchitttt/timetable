@@ -1,20 +1,25 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import DesktopNavbar from '../../../common/navbar/DesktopNavbar'
 import NewRoom from '../../components/add_room';
 import PageHeading from '../../components/PageHeading'
 import RoomsBox from '../../components/rooms_box';
-import { Modal } from '@mui/material';
+import { CircularProgress, Modal } from '@mui/material';
+import RoomsContext from '../../../global/contexts/RoomsContext';
+import { deleteRoom } from '../../../utils/apiCalls';
 
-function RoomsPageDesktop({ rooms }) {
-    const [roomsState, setRoomsState] = useState(rooms)
+function RoomsPageDesktop() {
     const [showModal, setShowModal] = useState(false);
+    const Rooms = useContext(RoomsContext);
+    const { roomsValue, setRooms } = Rooms;
 
-    const deleteHandler = (roomName) => {
-        console.log(roomName)
-        const filtered = roomsState.filter((item) => {
-            if(item !== roomName) return item;
+
+
+    const deleteHandler = (id) => {
+        const filtered = roomsValue.filter((item) => {
+            if (item._id !== id) return item;
         })
-        setRoomsState([...filtered]);
+        setRooms([...filtered]);
+        deleteRoom(id);
     }
 
     return (
@@ -26,31 +31,33 @@ function RoomsPageDesktop({ rooms }) {
                 <div className='desktop:w-[600px] biggerDesktops:w-[940px] justify-between'>
                     <PageHeading
                         buttonText='Add Room'
-                        amount={rooms.length}
+                        amount={roomsValue.length}
                         subHeading='Rooms'
                         onClickHandler={() => setShowModal(true)}
                         onClose={() => setShowModal(false)}
                     >Rooms</PageHeading>
                 </div>
                 <div className='mt-[25px] grid biggerDesktops:grid-cols-3 desktop:grid-cols-2 gap-[20px]'>
-                    {roomsState.map((room, idx) => {
+                    {roomsValue.length ? roomsValue.map((room, idx) => {
                         return <div
                             key={idx}
                         >
                             <RoomsBox
-                                mainText={room}
+                                key={room._id}
+                                id={room._id}
+                                mainText={room.roomId}
                                 deleteHandler={deleteHandler}
                             />
                         </div>
-                    })}
+                    }) : <CircularProgress />}
                 </div>
             </div>
             <Modal open={showModal}>
                 <div className='absolute top-[50%] left-[50%]' style={{ transform: 'translate(-50%,-50%)' }}>
                     <NewRoom
                         closeModal={() => setShowModal(false)}
-                        viewableData={roomsState}
-                        setViewableData={setRoomsState}
+                        viewableData={roomsValue}
+                        setViewableData={setRooms}
                     />
                 </div>
             </Modal>

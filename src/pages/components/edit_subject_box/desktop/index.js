@@ -11,7 +11,7 @@ import { saveChangesToSubjects } from '../../../../utils';
 import PageHeading from '../../PageHeading';
 import EditSubjectHeading from '../EditSubjectHeading';
 
-function EditSubjectBoxDesktop({ id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData }) {
+function EditSubjectBoxDesktop({ _id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData }) {
   const [subjectTitleState, setSubjectTitleState] = useState(subjectTitle);
   const [subjectCodeState, setSubjectCodeState] = useState(subjectCode);
   const [classesPerWeek, setClassesPerWeek] = useState(scheduledClassesPerWeek);
@@ -25,7 +25,7 @@ function EditSubjectBoxDesktop({ id, subjectTitle, subjectCode, scheduledClasses
 
   const saveHandler = (event) => {
     saveChangesToSubjects({
-      id: id,
+      _id: _id,
       courseTitle: subjectTitleState,
       courseCode: subjectCodeState,
       classSchedulePerWeek: classesPerWeek,

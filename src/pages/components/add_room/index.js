@@ -5,6 +5,7 @@ import ErrorLabel from '../../../common/inputs/ErrorLabel';
 import TextField from '../../../common/inputs/TextField';
 import Text20px from '../../../common/text/Text20px';
 import ThemeContext from '../../../global/contexts/ThemeContext'
+import { addRoom } from '../../../utils/apiCalls';
 
 function NewRoom({ viewableData, setViewableData, closeModal }) {
     const [roomId, setRoomId] = useState('');
@@ -13,9 +14,12 @@ function NewRoom({ viewableData, setViewableData, closeModal }) {
 
     const saveHandler = () => {
         const currArr = viewableData;
-        currArr.push(roomId);
-        setViewableData([...currArr])
-        closeModal()
+        currArr.push({
+            roomId:roomId
+        });
+        setViewableData([...currArr]);
+        addRoom(roomId);
+        closeModal();
     }
 
     return (

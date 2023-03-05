@@ -1,9 +1,26 @@
-import React from 'react'
+import { CircularProgress, Modal } from '@mui/material';
+import React, { useContext, useState } from 'react'
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
+import RoomsContext from '../../../global/contexts/RoomsContext';
+import { deleteRoom } from '../../../utils/apiCalls';
+import NewRoom from '../../components/add_room';
 import PageHeading from '../../components/PageHeading';
 import RoomBox from '../../components/rooms_box';
 
-function RoomsPageMobile({ rooms }) {
+function RoomsPageMobile() {
+  const [showModal, setShowModal] = useState(false);
+  const Rooms = useContext(RoomsContext);
+  const { roomsValue, setRooms } = Rooms;
+
+  const deleteHandler = (id) => {
+    const filtered = roomsValue.filter((item) => {
+      if (item._id !== id) return item;
+    })
+    setRooms([...filtered]);
+    deleteRoom(id);
+  }
+
+
   return (
     <div>
       <MobileNavbar />
@@ -11,17 +28,29 @@ function RoomsPageMobile({ rooms }) {
         <div className='mt-[20px] w-[327px] flex justify-center'>
           <PageHeading
             buttonText='Add Room'
-            amount={rooms.length}
+            amount={roomsValue.length}
             subHeading='Rooms'
+            onClickHandler={() => setShowModal(true)}
+            onClose={() => setShowModal(false)}
           >Rooms</PageHeading>
         </div>
-        {rooms.map((room, idx) => {
+        {roomsValue.length ? roomsValue.map((room, idx) => {
           return <RoomBox
-            key={idx}
-            mainText={room}
+            id={room._id}
+            mainText={room.roomId}
+            deleteHandler={deleteHandler}
           />
-        })}
+        }) : <CircularProgress />}
       </div>
+      <Modal open={showModal}>
+        <div className='absolute top-[50%] left-[50%]' style={{ transform: 'translate(-50%,-50%)' }}>
+          <NewRoom
+            closeModal={() => setShowModal(false)}
+            viewableData={roomsValue}
+            setViewableData={setRooms}
+          />
+        </div>
+      </Modal>
     </div>
   )
 }

@@ -1,3 +1,5 @@
+import { patchSubject } from "./apiCalls";
+
 export const searchSubjectByQuery = (value, subjects, setViewableData) => {
     if (value.length) {
         const filtered = subjects.filter((item) => {
@@ -46,16 +48,18 @@ export function makeid(length) {
  */
 
 export function saveChangesToSubjects(details, viewableData, setViewableData,closeModal,event) {
-    const { id, courseTitle, courseCode, classSchedulePerWeek, className, semesterLevel, branch, status } = details;
+    const { _id, courseTitle, courseCode, classSchedulePerWeek, className, semesterLevel, branch, status } = details;
     if (courseTitle.length && courseCode.length && classSchedulePerWeek.length && className.length && semesterLevel.length && branch.length) {
         for (let i = 0; i < viewableData.length; i++) {
-            if (viewableData[i].id === id) {
+            if (viewableData[i]._id === _id) {
                 viewableData[i] = details;
                 viewableData[i].class = details.className;
             }
         }
     }
-
+    console.log(_id)
     setViewableData([...viewableData])
-    closeModal(event)
+    patchSubject(details);
+    closeModal(event);
+
 }

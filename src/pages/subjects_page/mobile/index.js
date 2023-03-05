@@ -1,18 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import { CircularProgress } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react'
 import TextField from '../../../common/inputs/TextField';
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
+import SubjectsContext from '../../../global/contexts/SubjectsContext';
 import { makeid, searchSubjectByQuery } from '../../../utils';
 import InvoicesHeading from '../../components/PageHeading';
 import SubjectsBox from '../../components/subjectsBox';
 
-function MobileDesktop({ subjects }) {
-    const [viewableData, setViewableData] = useState(subjects);
+function MobileDesktop() {
     const [value, setValue] = useState('');
+    const [loading, setLoading] = useState(true);
+    const Subjects = useContext(SubjectsContext);
+    const { subjectValue, setSubjects } = Subjects;
 
     useEffect(() => {
-        searchSubjectByQuery(value, subjects, setViewableData);
+        searchSubjectByQuery(value, subjectValue, setSubjects);
     }, [value]);
-    
+
+    useEffect(() => {
+        if (subjectValue.length) setLoading(false)
+    }, [subjectValue])
+
     return (
         <div>
             <MobileNavbar />
@@ -20,7 +28,7 @@ function MobileDesktop({ subjects }) {
                 <div className='mt-[20px] w-[327px] flex justify-center'>
                     <InvoicesHeading
                         buttonText='Add subject'
-                        amount={viewableData.length}
+                        amount={subjectValue.length}
                         subHeading='Subjects'
                     >Subjects</InvoicesHeading>
                 </div>
@@ -31,10 +39,10 @@ function MobileDesktop({ subjects }) {
                         placeholder='Search by course name, code or semester'
                     />
                 </div>
-                {viewableData.map((subject) => {
-                    const uniqueId = makeid(subject.courseTitle.length)
+                {loading ? <CircularProgress /> : subjectValue.map((subject) => {
                     return <SubjectsBox
-                        key={uniqueId}
+                        key={subject._id}
+                        _id={subject._id}
                         courseCode={subject.courseCode}
                         courseTitle={subject.courseTitle}
                         classSchedulePerWeek={subject.classSchedulePerWeek}
@@ -43,7 +51,8 @@ function MobileDesktop({ subjects }) {
                         credits={subject.credits}
                         semesterLevel={subject.semesterLevel}
                         status={subject.status}
-                        viewableData={viewableData}
+                        viewableData={subjectValue}
+                        setViewableData={setSubjects}
                     />
                 })}
                 {/* <NoInvoices /> */}

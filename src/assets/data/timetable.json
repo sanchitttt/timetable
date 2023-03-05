@@ -1,0 +1,52 @@
+[
+    [
+        ["BCA-II", ["101 CA157", "101 CA160", "101 CA156", "101 CA161", "101 CA181", null, null, null]],
+        ["BCA-IV", ["102 CA255", "102 CA256", "102 CA257", "102 CA259", "102 CA223", "101 CA271", "101 CA224", null]],
+        ["BCA-VI", ["201 CA355", "201 CA356", "201 CA325", "201 CA327", "201 CA328", "102 CA331", null, null]],
+        ["MCA-I", ["202 MA430", "202 MA428", "202 MT114", "202 CA403", "202 CA402", null, null, null]],
+        ["MCA-III", ["VCR CA601", "VCR CA603", "VCR CA635", "VCR CA637", "VCR CA638", "201 CA640", "102 CA630", null]],
+        ["MCA-V", ["301 MT107", "301 MT109", "301 MT 111", "301 MT 112", null, null, null, null]],
+        ["BBA-II", ["302 MT209", "302 MT 210", "302 MT216", null, null, null, null, null]],
+        ["BBA-IV", ["303 MT303", "303 MT 306", "303 MT 308", "302 MT 310", "301 MT 311", "202 MT 317", "201 MT321", null]]
+    ],
+    [
+        ["BCA-II", ["101 CA157", "101 CA160", "101 CA156", "101 CA161", "101 CA181", null, null, null]],
+        ["BCA-IV", ["102 CA255", "102 CA256", "102 CA257", "102 CA259", "102 CA223", "101 CA272", "101 CA224", null]],
+        ["BCA-VI", ["201 CA355", "201 CA323", "201 CA325", "201 CA327", "201 CA328", null, null, null]],
+        ["MCA-I", ["202 MA430", "202 MT123", "202 MT114", "202 CA403", "202 MA429", null, null, null]],
+        ["MCA-III", ["VCR CA601", "VCR CA605", "VCR CA635", "VCR CA637", "VCR CA639", "102 CA640", "102 CA630", null]],
+        ["MCA-V", ["301 MT107", "301 MT110", "301 MT 111", "301 MT 113", null, null, null, null]],
+        ["BBA-II", ["302 MT209", "302 MT 210", null, null, null, null, null, null]],
+        ["BBA-IV", ["303 MT303", "303 MT 307", "302 MT 308", "302 MT 310", "301 MT 316", "201 MT 317", "201 MT321", null]]
+    ],
+    [
+        ["BCA-II", ["101 CA157", "101 CA158", "101 CA156", "101 CA159", "101 CA181", null, null, null]],
+        ["BCA-IV", ["102 CA255", "102 CA258", "102 CA257", "102 CA259", "102 CA271", "101 CA272", "101 CA224", null]],
+        ["BCA-VI", ["201 CA355", "201 CA323", "201 CA325", "201 CA327", "201 CA331", null, null, null]],
+        ["MCA-I", ["202 MA430", "202 MT123", "202 CA401", "202 CA403", "202 MA429", null, null, null]],
+        ["MCA-III", ["VCR CA601", "VCR CA605", "VCR CA636", "VCR CA637", "VCR CA639", "102 CA641", "102 CA630", null]],
+        ["MCA-V", ["301 MT107", "301 MT110", "301 MT 111", "301 MT 113", null, null, null, null]],
+        ["BBA-II", ["302 MT209", "302 MT212", null, null, null, null, null, null]],
+        ["BBA-IV", ["303 MT303", "303 MT 307", "302 MT 309", "302 MT 310", "301 MT 316", "201 MT-320", "201 MT321", null]]
+    ],
+    [
+        ["BCA-II", ["101 CA157", "101 CA158", "101 CA156", "101 CA159", "101 CA181", null, null, null]],
+        ["BCA-IV", ["102 CA255", "102 CA258", "102 CA257", "102 CA223", "102 CA271", "101 CA272", "101 CA224", null]],
+        ["BCA-VI", ["201 CA356", "201 CA323", "201 CA325", "201 CA328", "201 CA331", null, null, null]],
+        ["MCA-I", ["202 MA428", "202 MT123", "202 CA401", "202 CA402", "202 MA429", null, null, null]],
+        ["MCA-III", ["VCR CA603", "VCR CA605", "VCR CA636", "VCR CA638", "VCR CA639", "102 CA641", "102 CA630", null]],
+        ["MCA-V", ["301 MT109", "301 MT110", "301 MT 112", "301 MT 113", null, null, null, null]],
+        ["BBA-II", ["302 MT 210", "302 MT212", null, null, null, null, null, null]],
+        ["BBA-IV", ["303 MT 306", "303 MT 307", "302 MT 309", "302 MT 311", "301 MT 316", "201 MT-320", null, null]]
+    ],
+    [
+        ["BCA-II", ["101 CA160", "101 CA158", "101 CA161", "101 CA159", null, null, null, null]],
+        ["BCA-IV", ["102 CA256", "102 CA258", "102 CA259", "102 CA223", "101 CA271", "101 CA272", null, null]],
+        ["BCA-VI", ["201 CA356", "201 CA323", "201 CA327", "201 CA328", "102 CA331", null, null, null]],
+        ["MCA-I", ["202 MA428", "202 MT114", "202 CA401", "202 CA402", null, null, null, null]],
+        ["MCA-III", ["VCR CA603", "VCR CA635", "VCR CA636", "VCR CA638", "201 CA640", "102 CA641", "101 CA631", null]],
+        ["MCA-V", ["301 MT109", "301 MT110", "301 MT 112", null, null, null, null, null]],
+        ["BBA-II", ["302 MT 210", "302 MT216", null, null, null, null, null, null]],
+        ["BBA-IV", ["303 MT 306", "303 MT 308", "302 MT 309", "301 MT 311", "202 MT 317", "201 MT-320", null, null]]
+    ]
+]

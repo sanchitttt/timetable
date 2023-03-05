@@ -6,26 +6,52 @@ import SubjectsPage from "./pages/subjects_page";
 import ViewInvoicePage from './pages/view_invoices'
 import TimetablePage from "./pages/timetable_page";
 import RoomsPage from "./pages/rooms_page";
+import axios from "axios";
+import config from './setup/config';
+import SubjectsContext from "./global/contexts/SubjectsContext";
+import RoomsContext from "./global/contexts/RoomsContext";
+import NavigateBack from "./pages/navigate_back";
+
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const [subjects, setSubjects] = useState([]);
+  const [rooms, setRooms] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let bodyEle = document.getElementById('body');
     bodyEle.style.background = theme === 'dark' ? "#141625" : "#F8F8FB"
   }, [theme]);
-  
-  
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { data } = await axios.get(`${config.BACKEND_URL}/subjects`);
+      setSubjects(data);
+    }
+    const fetch2 = async () => {
+      const { data } = await axios.get(`${config.BACKEND_URL}/rooms`);
+      setRooms(data);
+    }
+    fetch();
+    fetch2();
+    setLoading(false);
+  }, []);
   return (
     <div className={`App`}>
       <ThemeContext.Provider value={{ themeValue: theme, changeTheme: setTheme }}>
-        <Routes>
-          <Route path='/teachers' element={<TeachersPage />} />
-          <Route path='/subjects' element={<SubjectsPage />} />
-          <Route path='/view/:id' element={<ViewInvoicePage />} /> 
-          <Route path='/timetable' element={<TimetablePage />} /> 
-          <Route path='/rooms' element={<RoomsPage />} /> 
-        </Routes>
+        <SubjectsContext.Provider value={{ subjectValue: subjects, setSubjects: setSubjects }}>
+          <RoomsContext.Provider value={{ roomsValue: rooms, setRooms: setRooms }}>
+            <Routes>
+              <Route path='/teachers' element={<TeachersPage />} />
+              <Route path='/subjects' element={<SubjectsPage />} />
+              <Route path='/view/:id' element={<ViewInvoicePage />} />
+              <Route path='/timetable' element={<TimetablePage />} />
+              <Route path='/rooms' element={<RoomsPage />} />
+              <Route path='*' element={<NavigateBack />} />
+            </Routes>
+          </RoomsContext.Provider>
+        </SubjectsContext.Provider>
       </ThemeContext.Provider>
     </div>
   );

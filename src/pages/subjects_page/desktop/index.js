@@ -1,19 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import { CircularProgress, Skeleton } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
 import TextField from '../../../common/inputs/TextField';
 import DesktopNavbar from '../../../common/navbar/DesktopNavbar';
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
+import SubjectsContext from '../../../global/contexts/SubjectsContext';
 import { makeid, searchSubjectByQuery } from '../../../utils';
 import NoRecords from '../../components/no_records_found';
 import InvoicesHeading from '../../components/PageHeading';
 import SubjectsBox from '../../components/subjectsBox';
 
-function SubjectsDesktop({ subjects }) {
+function SubjectsDesktop({ }) {
   const [value, setValue] = useState('');
-  const [viewableData, setViewableData] = useState(subjects);
+  const Subjects = useContext(SubjectsContext);
+  const { subjectValue, setSubjects } = Subjects;
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    searchSubjectByQuery(value, subjects, setViewableData);
+    searchSubjectByQuery(value, subjectValue, setSubjects);
   }, [value]);
+
+  useEffect(() => {
+    if (subjectValue.length) setLoading(false)
+  }, [subjectValue])
 
   return (
     <div className='relative flex justify-center item-center flex-col'>
@@ -29,7 +37,7 @@ function SubjectsDesktop({ subjects }) {
         <div className='desktop:w-[730px] biggerDesktops:w-[1000px] justify-between'>
           <InvoicesHeading
             buttonText='Add subject'
-            amount={subjects.length}
+            amount={subjectValue.length}
             subHeading='Subjects'
           >Subjects</InvoicesHeading>
           <div className='mt-[20px]'>
@@ -39,15 +47,19 @@ function SubjectsDesktop({ subjects }) {
               placeholder='Search by course name, code or semester'
             />
           </div>
-
-          <div className='h-[85vh]' style={{overflowY:'scroll'}}>
+          {loading ?
+            <div className='w-[100%] h-[85vh] flex items-center justify-center' >
+              <CircularProgress />
+            </div>
+          :
+          <div className='h-[85vh]' style={{ overflowY: 'scroll' }}>
             <div className='mt-[25px] grid biggerDesktops:grid-cols-3 desktop:grid-cols-2 gap-[20px]'>
-              {viewableData.map((subject, idx) => {
-                return <div 
-                key={subject.id} 
+              {subjectValue.map((subject, idx) => {
+                return <div
+                  key={subject.id}
                 >
                   <SubjectsBox
-                    id={subject.id}
+                    _id={subject._id}
                     courseCode={subject.courseCode}
                     courseTitle={subject.courseTitle}
                     classSchedulePerWeek={subject.classSchedulePerWeek}
@@ -56,17 +68,16 @@ function SubjectsDesktop({ subjects }) {
                     credits={subject.credits}
                     semesterLevel={subject.semesterLevel}
                     status={subject.status}
-                    setViewableData={setViewableData}
-                    viewableData={viewableData}
+                    setViewableData={setSubjects}
+                    viewableData={subjectValue}
                   />
                 </div>
               })}
             </div>
           </div>
 
-
-
-          {viewableData.length === 0 && <NoRecords
+          }
+          {subjectValue.length === 0 && !loading && <NoRecords
             mainHeading={'No records found'}
             subHeading={'Add subjects for them to show up here'}
           />}

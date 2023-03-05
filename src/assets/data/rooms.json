@@ -1,1 +1,40 @@
-["101", "102", "201", "202", "VCR", "301", "302", "303", "304", "305", "PGLab-1", "PGLab-2", "UGLab-1", "UGLab-2"]
+[{
+        "roomId": "101"
+    },
+    {
+        "roomId": "102"
+    },
+    {
+        "roomId": "201"
+    },
+    {
+        "roomId": "VCR"
+    },
+    {
+        "roomId": "301"
+    },
+    {
+        "roomId": "302"
+    },
+    {
+        "roomId": "303"
+    },
+    {
+        "roomId": "304"
+    },
+    {
+        "roomId": "305"
+    },
+    {
+        "roomId": "PG_LAB-1"
+    },
+    {
+        "roomId": "PG_LAB-2"
+    },
+    {
+        "roomId": "UG_LAB-1"
+    },
+    {
+        "roomId": "UG_LAB-2"
+    }
+]

@@ -8,10 +8,17 @@ body {
 }
 
 .width {
-    width:300px;
-    min-height:50px;
+    width: 300px;
+    min-height: 50px;
 }
 
+.col:nth-child(even) {
+    background-color: antiquewhite;
+}
+
+.row:nth-child(even){
+    background-color: aqua;
+}
 
 @media screen and (max-width:968px) {
     .desktop-navbar {

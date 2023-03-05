@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import subjectsData from '../../assets/data/subjects.json';
+import React, { useContext, useEffect, useState } from 'react'
 import SubjectsMobile from './mobile';
 import SubjectsDesktop from './desktop';
 
 
 
 function SubjectsPage() {
-    const [data, setData] = useState(subjectsData);
     return (
         <div>
             <div className='desktop:hidden mobile:block'>
-                <SubjectsMobile subjects={data} />
+                <SubjectsMobile />
             </div>
             <div className='desktop:block mobile:hidden'>
-                <SubjectsDesktop subjects={data} />
+                <SubjectsDesktop />
             </div>
         </div>
 

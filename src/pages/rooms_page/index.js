@@ -7,10 +7,10 @@ function RoomsPage() {
     return (
         <div>
             <div className='desktop:hidden mobile:block'>
-                <RoomsPageMobile rooms={rooms} />
+                <RoomsPageMobile />
             </div>
             <div className='desktop:block mobile:hidden'>
-                <RoomsPageDesktop rooms={rooms} />
+                <RoomsPageDesktop />
             </div>
         </div>
     )

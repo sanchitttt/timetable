@@ -10,7 +10,7 @@ import EditSubjectBox from '../edit_subject_box';
 
 
 
-function SubjectsBox({ id, courseCode, courseTitle, classSchedulePerWeek, className, branch, credits, status, semesterLevel, setViewableData, viewableData }) {
+function SubjectsBox({ _id, courseCode, courseTitle, classSchedulePerWeek, className, branch, credits, status, semesterLevel, setViewableData, viewableData }) {
     const [showModal, setShowModal] = useState(false);
     const Theme = useContext(ThemeContext);
     const { themeValue } = Theme;
@@ -29,7 +29,7 @@ function SubjectsBox({ id, courseCode, courseTitle, classSchedulePerWeek, classN
             >
                 <div className=''>
                     <EditSubjectBox
-                        id={id}
+                        _id={_id}
                         subjectTitle={courseTitle}
                         semesterLevel={semesterLevel}
                         subjectCode={courseCode}

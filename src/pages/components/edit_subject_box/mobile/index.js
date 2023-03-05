@@ -6,9 +6,10 @@ import Select from '../../../../common/inputs/Select';
 import SelectItem from '../../../../common/inputs/SelectItem';
 import TextField from '../../../../common/inputs/TextField';
 import ThemeContext from '../../../../global/contexts/ThemeContext';
+import { saveChangesToSubjects } from '../../../../utils';
 import EditSubjectHeading from '../EditSubjectHeading';
 
-function EditSubjectBoxMobile({ id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status ,viewableData}) {
+function EditSubjectBoxMobile({ _id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData }) {
   const [subjectTitleState, setSubjectTitleState] = useState(subjectTitle);
   const [subjectCodeState, setSubjectCodeState] = useState(subjectCode);
   const [classesPerWeek, setClassesPerWeek] = useState(scheduledClassesPerWeek);
@@ -20,10 +21,20 @@ function EditSubjectBoxMobile({ id, subjectTitle, subjectCode, scheduledClassesP
   const Theme = useContext(ThemeContext);
   const { themeValue } = Theme;
 
-  const saveHandler = () => {
-
+  const saveHandler = (event) => {
+    saveChangesToSubjects({
+      _id: _id,
+      courseTitle: subjectTitleState,
+      courseCode: subjectCodeState,
+      classSchedulePerWeek: classesPerWeek,
+      className: className,
+      semesterLevel: semesterLevelState,
+      branch: branchState,
+      status: statusState
+    }, viewableData, setViewableData, closeModal, event
+    )
   }
-  
+
   return (
     <div className={`w-[100%] flex flex-col gap-[25px] h-[100vh] px-[20px] ${themeValue === 'dark' ? "bg-03" : "bg-[#fff]"} overflow-scroll`}>
       <div className='w-[100%]'>

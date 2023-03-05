@@ -1,13 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import Select from '../../../common/inputs/Select';
-import SelectItem from '../../../common/inputs/SelectItem';
+import React, { useContext, useEffect, useState } from 'react'
+import generateTimetable from 'timetablegeneratorpackage';
 import DesktopNavbar from '../../../common/navbar/DesktopNavbar';
 import Text24px from '../../../common/text/Text24px';
-import PageHeading from '../../components/PageHeading';
+import RoomsContext from '../../../global/contexts/RoomsContext';
+import SubjectsContext from '../../../global/contexts/SubjectsContext';
 import Table from '../Table';
 
-function TimetableDesktop({ data }) {
-    const [details, setDetails] = useState(data);
+const inputArr = [
+    ['bca', 'II'],
+    ['bca', 'IV'],
+    ['bca', 'VI'],
+    ['mca', 'II'],
+    ['mca', 'IV'],
+]
+
+function TimetableDesktop() {
+    const [data, setData] = useState();
+    const Rooms = useContext(RoomsContext);
+    const Subjects = useContext(SubjectsContext);
+    const [hasErrors, setHasErrors] = useState(false);
+
+    const { roomsValue } = Rooms;
+    const { subjectValue } = Subjects;
+
+    useEffect(() => {
+        let res = generateTimetable(inputArr, roomsValue, subjectValue)
+        setData(res)
+    }, [roomsValue,subjectValue])
+
+    if (hasErrors) {
+        return <div className='flex items-center justify-center w-[100%] h-[100%]'>
+            <h1>Make sure the subjects are active!</h1>
+        </div>
+    }
     return (
         <div className='flex items-center flex-col justify-center h-[100vh] overflow-scroll'>
             <div className='desktop-navbar absolute left-[0px] h-[100%]'>
@@ -19,8 +44,9 @@ function TimetableDesktop({ data }) {
                         <Text24px>Timetable</Text24px>
                     </div>
                 </div>
+
                 <div className='w-[100%] h-[90vh]  '>
-                    <Table data={details} />
+                    {data && <Table data={data} />}
                 </div>
 
             </div>
