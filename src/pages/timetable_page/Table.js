@@ -4,7 +4,6 @@ const daysArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const columns = ['Day', 'Branch', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
 
 function Table({ data }) {
-    console.log(data);
     // const rowSpanLength = data[0][1].length + 1;
     return (
         <div className='flex flex-col border-t-[1px] border-r-[1px] border-l-[1px] text-[12px]'>

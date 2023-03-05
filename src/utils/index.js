@@ -47,7 +47,7 @@ export function makeid(length) {
  * @param {HTMLEvent} event
  */
 
-export function saveChangesToSubjects(details, viewableData, setViewableData,closeModal,event) {
+export function saveChangesToSubjects(details, viewableData, setViewableData, closeModal, event) {
     const { _id, courseTitle, courseCode, classSchedulePerWeek, className, semesterLevel, branch, status } = details;
     if (courseTitle.length && courseCode.length && classSchedulePerWeek.length && className.length && semesterLevel.length && branch.length) {
         for (let i = 0; i < viewableData.length; i++) {
@@ -62,4 +62,20 @@ export function saveChangesToSubjects(details, viewableData, setViewableData,clo
     patchSubject(details);
     closeModal(event);
 
+}
+
+
+export function generateInputForTimetable(obj) {
+    const result = [];
+    if (obj.bca1) result.push(['bca', 'I'])
+    if (obj.bca2) result.push(['bca', 'II'])
+    if (obj.bca3) result.push(['bca', 'III'])
+    if (obj.bca4) result.push(['bca', 'IV'])
+    if (obj.bca5) result.push(['bca', 'V'])
+    if (obj.bca6) result.push(['bca', 'VI'])
+    if (obj.mca1) result.push(['mca', 'I'])
+    if (obj.mca2) result.push(['mca', 'II'])
+    if (obj.mca3) result.push(['mca', 'III'])
+    if (obj.mca4) result.push(['mca', 'IV'])
+    return result;
 }
