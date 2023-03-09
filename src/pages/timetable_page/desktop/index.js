@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
 import generateTimetable from 'timetablegeneratorpackage';
 import Checkbox from '../../../common/inputs/Checkbox';
-import DesktopNavbar from '../../../common/navbar/DesktopNavbar';
 import Text15px from '../../../common/text/Text15px';
 import Text24px from '../../../common/text/Text24px';
 import RoomsContext from '../../../global/contexts/RoomsContext';
@@ -13,6 +12,7 @@ import { Link, useHref, useNavigate } from 'react-router-dom';
 
 import Table from '../Table';
 import Button2 from '../../../common/buttons/Button2';
+import MobileNavbar from '../../../common/navbar/MobileNavbar';
 
 const inputArr = [
     ['bca', 'II'],
@@ -125,8 +125,8 @@ function TimetableDesktop() {
     }
     return (
         <div className='flex items-center flex-col justify-center h-[100vh] '>
-            <div className='desktop-navbar absolute left-[0px] h-[100%]'>
-                <DesktopNavbar />
+            <div className='desktop-navbar w-[100vw] h-[100%]'>
+                <MobileNavbar />
             </div>
             <div className='desktop:w-[900px] biggerDesktops:w-[1200px] gap-[30px] flex flex-col justify-between'>
                 <div className='flex justify-between items-center w-[100%]'>
@@ -179,7 +179,7 @@ function TimetableDesktop() {
                 </div>
 
 
-                <div className='w-[100%] h-[70vh] overflow-scroll '>
+                <div className='w-[100%] h-[65vh] overflow-scroll '>
                     {data && <Table data={data} />}
                 </div>
 
