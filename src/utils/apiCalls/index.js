@@ -31,3 +31,13 @@ export async function addRoom(roomId) {
 
     }
 }
+
+export async function downloadAsAttachment(data) {
+    try {
+        let res = await axios.post(`${config.BACKEND_URL}/timetable-excel`, { data: data });
+        // const res2 = await axios.get(`${config.BACKEND_URL}/timetable-excel?rowspan=${rowSpan}`)
+    //    console.log(res2.data.blob())
+    } catch (error) {
+
+    }
+}

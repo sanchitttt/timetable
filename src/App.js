@@ -48,7 +48,8 @@ function App() {
               <Route path='/view/:id' element={<ViewInvoicePage />} />
               <Route path='/timetable' element={<TimetablePage />} />
               <Route path='/rooms' element={<RoomsPage />} />
-              <Route path='*' element={<NavigateBack />} />
+              
+              {/* <Route path='*' element={<NavigateBack />} /> */}
             </Routes>
           </RoomsContext.Provider>
         </SubjectsContext.Provider>

@@ -2,7 +2,7 @@ import React from 'react'
 
 function TimetableMobile() {
   return (
-    <div>index</div>
+    <div>Work under progress</div>
   )
 }
 

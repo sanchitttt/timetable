@@ -1,7 +1,7 @@
 import { patchSubject } from "./apiCalls";
 
 export const searchSubjectByQuery = (value, subjects, setViewableData) => {
-    console.log(value,subjects,setViewableData)
+    console.log(value, subjects, setViewableData)
     if (value.length) {
         const filtered = subjects.filter((item) => {
             const { courseCode, courseTitle, class: className, semesterLevel } = item;
@@ -78,5 +78,17 @@ export function generateInputForTimetable(obj) {
     if (obj.mca2) result.push(['mca', 'II'])
     if (obj.mca3) result.push(['mca', 'III'])
     if (obj.mca4) result.push(['mca', 'IV'])
+    if (obj.bba1) result.push(['bba', 'I'])
+    if (obj.bba2) result.push(['bba', 'II'])
+    if (obj.bba3) result.push(['bba', 'III'])
+    if (obj.bba4) result.push(['bba', 'IV'])
+    if (obj.bba5) result.push(['bba', 'V'])
+    if (obj.bba6) result.push(['bba', 'VI'])
+    if (obj.mba1) result.push(['mba', 'I'])
+    if (obj.mba2) result.push(['mba', 'II'])
+    if (obj.mba3) result.push(['mba', 'III'])
+    if (obj.mba4) result.push(['mba', 'IV'])
+    if (obj.mba5) result.push(['mba', 'V'])
+    if (obj.mba6) result.push(['mba', 'VI'])
     return result;
 }

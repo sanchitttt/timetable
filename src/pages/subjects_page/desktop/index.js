@@ -9,7 +9,8 @@ import NoRecords from '../../components/no_records_found';
 import InvoicesHeading from '../../components/PageHeading';
 import SubjectsBox from '../../components/subjectsBox';
 
-function SubjectsDesktop({ }) {
+
+function SubjectsDesktop() {
   const [value, setValue] = useState('');
   const Subjects = useContext(SubjectsContext);
   const { subjectValue, setSubjects } = Subjects;
@@ -22,6 +23,9 @@ function SubjectsDesktop({ }) {
 
   useEffect(() => {
     if (subjectValue.length) setLoading(false)
+    if (subjectValue.length) {
+      setViewableData(subjectValue)
+    }
   }, [subjectValue])
 
   return (
@@ -38,7 +42,7 @@ function SubjectsDesktop({ }) {
         <div className='desktop:w-[730px] biggerDesktops:w-[1000px] justify-between'>
           <InvoicesHeading
             buttonText='Add subject'
-            amount={subjectValue.length}
+            amount={viewableData?viewableData.length:0}
             subHeading='Subjects'
           >Subjects</InvoicesHeading>
           <div className='mt-[20px]'>
