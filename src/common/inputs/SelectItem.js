@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SelectItem({value}) {
+function SelectItem({ value, children,disabled }) {
   return (
-    <option value={value}>{value}</option>
+    <option disabled={disabled} value={value}>{children ? children : value}</option>
   )
 }
 

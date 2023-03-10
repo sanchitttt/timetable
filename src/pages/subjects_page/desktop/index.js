@@ -1,10 +1,11 @@
-import { CircularProgress, Skeleton } from '@mui/material';
+import { CircularProgress, Modal, Skeleton } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import TextField from '../../../common/inputs/TextField';
 import DesktopNavbar from '../../../common/navbar/DesktopNavbar';
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
 import SubjectsContext from '../../../global/contexts/SubjectsContext';
 import { searchSubjectByQuery } from '../../../utils';
+import AddSubject from '../../components/add_subject';
 import NoRecords from '../../components/no_records_found';
 import InvoicesHeading from '../../components/PageHeading';
 import SubjectsBox from '../../components/subjectsBox';
@@ -16,6 +17,7 @@ function SubjectsDesktop() {
   const { subjectValue, setSubjects } = Subjects;
   const [viewableData, setViewableData] = useState(subjectValue);
   const [loading, setLoading] = useState(true);
+  const [addSubjectModal, setAddSubjectModal] = useState(false);
 
   useEffect(() => {
     searchSubjectByQuery(value, subjectValue, setViewableData);
@@ -27,7 +29,7 @@ function SubjectsDesktop() {
       setViewableData(subjectValue)
     }
   }, [subjectValue])
-
+  
   return (
     <div className='relative flex justify-center item-center flex-col'>
       <div className='desktop-navbar absolute left-[0px] h-[100%]'>
@@ -42,8 +44,9 @@ function SubjectsDesktop() {
         <div className='desktop:w-[730px] biggerDesktops:w-[1000px] justify-between'>
           <InvoicesHeading
             buttonText='Add subject'
-            amount={viewableData?viewableData.length:0}
+            amount={viewableData ? viewableData.length : 0}
             subHeading='Subjects'
+            onClickHandler={() => setAddSubjectModal(true)}
           >Subjects</InvoicesHeading>
           <div className='mt-[20px]'>
             <TextField
@@ -75,6 +78,7 @@ function SubjectsDesktop() {
                       status={subject.status}
                       setViewableData={setSubjects}
                       viewableData={subjectValue}
+                      taughtBy={subject.taughtBy}
                     />
                   </div>
                 })}
@@ -88,6 +92,16 @@ function SubjectsDesktop() {
           />}
         </div>
 
+        <Modal open={addSubjectModal}>
+          <div>
+            <AddSubject closeModal={(e) => {
+              e.stopPropagation()
+              setAddSubjectModal(false)
+            }}
+
+            />
+          </div>
+        </Modal>
 
       </div>
     </div>

@@ -5,11 +5,12 @@ import ErrorLabel from '../../../../common/inputs/ErrorLabel';
 import Select from '../../../../common/inputs/Select';
 import SelectItem from '../../../../common/inputs/SelectItem';
 import TextField from '../../../../common/inputs/TextField';
+import TeachersContext from '../../../../global/contexts/TeachersContext';
 import ThemeContext from '../../../../global/contexts/ThemeContext';
 import { saveChangesToSubjects } from '../../../../utils';
 import EditSubjectHeading from '../EditSubjectHeading';
 
-function EditSubjectBoxMobile({ _id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData }) {
+function EditSubjectBoxMobile({ _id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData, taughtBy }) {
   const [subjectTitleState, setSubjectTitleState] = useState(subjectTitle);
   const [subjectCodeState, setSubjectCodeState] = useState(subjectCode);
   const [classesPerWeek, setClassesPerWeek] = useState(scheduledClassesPerWeek);
@@ -17,9 +18,13 @@ function EditSubjectBoxMobile({ _id, subjectTitle, subjectCode, scheduledClasses
   const [semesterLevelState, setSemesterLevelState] = useState(semesterLevel);
   const [branchState, setBranchState] = useState(branch);
   const [statusState, setStatusState] = useState(status);
+  const [taughtByState, setTaughtByState] = useState(taughtBy);
 
   const Theme = useContext(ThemeContext);
   const { themeValue } = Theme;
+
+  const Teachers = useContext(TeachersContext);
+  const { teachersValue } = Teachers;
 
   const saveHandler = (event) => {
     saveChangesToSubjects({
@@ -30,7 +35,8 @@ function EditSubjectBoxMobile({ _id, subjectTitle, subjectCode, scheduledClasses
       className: className,
       semesterLevel: semesterLevelState,
       branch: branchState,
-      status: statusState
+      status: statusState,
+      taughtBy: taughtByState
     }, viewableData, setViewableData, closeModal, event
     )
   }
@@ -103,6 +109,18 @@ function EditSubjectBoxMobile({ _id, subjectTitle, subjectCode, scheduledClasses
         <SelectItem value='active' />
         <SelectItem value='inactive' />
       </Select>
+
+      <Select
+        value={taughtByState ? taughtByState : 'None'}
+        onChange={(e) => setTaughtByState(e.target.value)}
+        label={'Taught By'}
+      >
+        {teachersValue.map((item) => {
+          return <SelectItem value={item.teacherInitials} />
+        })}
+
+      </Select>
+
       <div>
         <TextField
           value={branchState}
@@ -113,6 +131,8 @@ function EditSubjectBoxMobile({ _id, subjectTitle, subjectCode, scheduledClasses
         />
         {branchState.length === 0 && <ErrorLabel>Branch cant be empty</ErrorLabel>}
       </div>
+
+
       <div className='flex items-center justify-end gap-[15px]'>
         <Button4 onClick={closeModal}>Cancel</Button4>
         <Button2

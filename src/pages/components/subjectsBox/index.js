@@ -10,7 +10,7 @@ import EditSubjectBox from '../edit_subject_box';
 
 
 
-function SubjectsBox({ _id, courseCode, courseTitle, classSchedulePerWeek, className, branch, credits, status, semesterLevel, setViewableData, viewableData }) {
+function SubjectsBox({ _id, courseCode, courseTitle, classSchedulePerWeek, className, branch, credits, status, semesterLevel, setViewableData, viewableData, taughtBy }) {
     const [showModal, setShowModal] = useState(false);
     const Theme = useContext(ThemeContext);
     const { themeValue } = Theme;
@@ -18,7 +18,7 @@ function SubjectsBox({ _id, courseCode, courseTitle, classSchedulePerWeek, class
     return (
         <div
             role={'button'}
-            className={`p-[20px]  w-[300px] h-[200px] justify-between gap-[10px] flex flex-col ${themeValue === 'dark' ? "bg-03" : "bg-[#fff]"} rounded-[8px]`}
+            className={`p-[20px]  w-[300px] h-[200px] justify-between gap-[10px] flex flex-col ${themeValue === 'dark' ? "bg-03" : "bg-[#fff]"} rounded-[8px] `}
             onClick={() => setShowModal(true)}
         >
             <Text18px bold>{courseTitle}</Text18px>
@@ -34,7 +34,7 @@ function SubjectsBox({ _id, courseCode, courseTitle, classSchedulePerWeek, class
                         semesterLevel={semesterLevel}
                         subjectCode={courseCode}
                         scheduledClassesPerWeek={classSchedulePerWeek}
-                        branch={branch}
+                        branch={branch} 
                         className={className}
                         status={status}
                         closeModal={(e) => {
@@ -43,6 +43,7 @@ function SubjectsBox({ _id, courseCode, courseTitle, classSchedulePerWeek, class
                         }}
                         setViewableData={setViewableData}
                         viewableData={viewableData}
+                        taughtBy={taughtBy}
                     />
                 </div>
             </Modal>}

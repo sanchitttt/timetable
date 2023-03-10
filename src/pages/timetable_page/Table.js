@@ -7,18 +7,6 @@ function Table({ data }) {
     // const rowSpanLength = data[0][1].length + 1;
     return (
         <div className='flex flex-col border-t-[1px] border-r-[1px] border-l-[1px] text-[12px]'>
-            {/* <div className='grid grid-cols-10'>
-                <div className='' >Day</div>
-                <div>Branch</div>
-                <div>1st</div>
-                <div>2nd</div>
-                <div>3rd</div>
-                <div>4th</div>
-                <div>5th</div>
-                <div>6th</div>
-                <div>7th</div>
-                <div >8th</div>
-            </div> */}
             {data.map((item, idx) => {
                 return <div className='container flex border-b-[1px] '>
                     <div className='leftSide w-[80px] border-r-[1px] px-[10px] uppercase text-[10px]  '>

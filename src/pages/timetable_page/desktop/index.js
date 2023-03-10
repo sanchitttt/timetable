@@ -109,8 +109,14 @@ function TimetableDesktop() {
 
 
     useEffect(() => {
-        let res = generateTimetable(inputArrState, roomsValue, subjectValue, true);
-        setData(res)
+        try {
+            let res = generateTimetable(inputArrState, roomsValue, subjectValue, true);
+            setData(res)
+            setHasErrors(false)
+        } catch (error) {
+            setHasErrors(error);
+        }
+
     }, [inputArrState, roomsValue, subjectValue])
 
     const clickHandler = () => {
@@ -118,11 +124,6 @@ function TimetableDesktop() {
         downloadAsAttachment(res);
     }
 
-    if (hasErrors) {
-        return <div className='flex items-center justify-center w-[100%] h-[100%]'>
-            <h1>Make sure the subjects are active!</h1>
-        </div>
-    }
     return (
         <div className='flex items-center flex-col justify-center h-[100vh] '>
             <div className='desktop-navbar w-[100vw] h-[100%]'>
@@ -178,9 +179,16 @@ function TimetableDesktop() {
                     </div>
                 </div>
 
-
                 <div className='w-[100%] h-[65vh] overflow-scroll '>
-                    {data && <Table data={data} />}
+                    {hasErrors ?
+                        <>
+                            <h1 className='text-[40px] text-09'>{hasErrors.type}</h1>
+                            <h3 className='text-09'>{hasErrors.message}</h3>
+                        </>
+                        :
+                        data && <Table data={data} />
+
+                    }
                 </div>
 
             </div>

@@ -49,7 +49,7 @@ export function makeid(length) {
  */
 
 export function saveChangesToSubjects(details, viewableData, setViewableData, closeModal, event) {
-    const { _id, courseTitle, courseCode, classSchedulePerWeek, className, semesterLevel, branch, status } = details;
+    const { _id, courseTitle, courseCode, classSchedulePerWeek, className, semesterLevel, branch, status, taughtBy } = details;
     if (courseTitle.length && courseCode.length && classSchedulePerWeek.length && className.length && semesterLevel.length && branch.length) {
         for (let i = 0; i < viewableData.length; i++) {
             if (viewableData[i]._id === _id) {
@@ -58,7 +58,6 @@ export function saveChangesToSubjects(details, viewableData, setViewableData, cl
             }
         }
     }
-    console.log(_id)
     setViewableData([...viewableData])
     patchSubject(details);
     closeModal(event);

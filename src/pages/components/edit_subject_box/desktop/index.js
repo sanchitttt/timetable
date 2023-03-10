@@ -6,12 +6,13 @@ import Select from '../../../../common/inputs/Select';
 import SelectItem from '../../../../common/inputs/SelectItem';
 import TextField from '../../../../common/inputs/TextField';
 import Text15px from '../../../../common/text/Text15px';
+import TeachersContext from '../../../../global/contexts/TeachersContext';
 import ThemeContext from '../../../../global/contexts/ThemeContext';
 import { saveChangesToSubjects } from '../../../../utils';
 import PageHeading from '../../PageHeading';
 import EditSubjectHeading from '../EditSubjectHeading';
 
-function EditSubjectBoxDesktop({ _id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData }) {
+function EditSubjectBoxDesktop({ _id, subjectTitle, subjectCode, scheduledClassesPerWeek, className, semesterLevel, branch, closeModal, setViewableData, status, viewableData, taughtBy }) {
   const [subjectTitleState, setSubjectTitleState] = useState(subjectTitle);
   const [subjectCodeState, setSubjectCodeState] = useState(subjectCode);
   const [classesPerWeek, setClassesPerWeek] = useState(scheduledClassesPerWeek);
@@ -19,9 +20,13 @@ function EditSubjectBoxDesktop({ _id, subjectTitle, subjectCode, scheduledClasse
   const [semesterLevelState, setSemesterLevelState] = useState(semesterLevel);
   const [branchState, setBranchState] = useState(branch);
   const [statusState, setStatusState] = useState(status);
+  const [taughtByState, setTaughtByState] = useState(taughtBy);
 
   const Theme = useContext(ThemeContext);
+  const Teachers = useContext(TeachersContext);
+  const { teachersValue } = Teachers;
   const { themeValue } = Theme;
+
 
   const saveHandler = (event) => {
     saveChangesToSubjects({
@@ -32,7 +37,8 @@ function EditSubjectBoxDesktop({ _id, subjectTitle, subjectCode, scheduledClasse
       className: className,
       semesterLevel: semesterLevelState,
       branch: branchState,
-      status: statusState
+      status: statusState,
+      taughtBy: taughtByState
     }, viewableData, setViewableData, closeModal, event
     )
   }
@@ -105,6 +111,18 @@ function EditSubjectBoxDesktop({ _id, subjectTitle, subjectCode, scheduledClasse
       >
         <SelectItem value='active' />
         <SelectItem value='inactive' />
+      </Select>
+
+      <Select
+        value={taughtByState ? taughtByState : 'None'}
+        onChange={(e) => setTaughtByState(e.target.value)}
+        label={'Taught By'}
+      >
+        <SelectItem value={'None'} disabled>None Selected</SelectItem>
+        {teachersValue.map((item) => {
+          return <SelectItem value={item.teacherInitials}>{item.teacherName} ({item.teacherInitials})</SelectItem>
+        })}
+
       </Select>
       <div>
         <TextField

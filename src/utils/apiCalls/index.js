@@ -36,7 +36,24 @@ export async function downloadAsAttachment(data) {
     try {
         let res = await axios.post(`${config.BACKEND_URL}/timetable-excel`, { data: data });
         // const res2 = await axios.get(`${config.BACKEND_URL}/timetable-excel?rowspan=${rowSpan}`)
-    //    console.log(res2.data.blob())
+        //    console.log(res2.data.blob())
+    } catch (error) {
+
+    }
+}
+
+export async function addNewSubject(data) {
+    try {
+        const res = await axios.post(`${config.BACKEND_URL}/subjects`, { ...data });
+    } catch (error) {
+
+    }
+}
+
+export async function getTeachers() {
+    try {
+        const res = await axios.get(`${config.BACKEND_URL}/teachers`);
+        return res.data;
     } catch (error) {
 
     }
