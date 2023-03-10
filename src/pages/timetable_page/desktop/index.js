@@ -13,6 +13,7 @@ import { Link, useHref, useNavigate } from 'react-router-dom';
 import Table from '../Table';
 import Button2 from '../../../common/buttons/Button2';
 import MobileNavbar from '../../../common/navbar/MobileNavbar';
+import config from '../../../setup/config';
 
 const inputArr = [
     ['bca', 'II'],
@@ -136,7 +137,7 @@ function TimetableDesktop() {
                         <Text15px>Generate timetable for : </Text15px>
                     </div>
                     <div className='flex gap-[30px]'>
-                        <Link to={`http://localhost:8082/timetable-excel?rowspan=${inputArrState.length}`}>
+                        <Link to={`${config.BACKEND_URL}/timetable-excel?rowspan=${inputArrState.length}`}>
                             <Button2>Download XLSL</Button2>
                         </Link>
                         <Button2 onClick={clickHandler}>Load Data</Button2>
@@ -183,7 +184,7 @@ function TimetableDesktop() {
                     {hasErrors ?
                         <>
                             <h1 className='text-[40px] text-09'>{hasErrors.type}</h1>
-                            <h3 className='text-09'>{hasErrors.message}</h3>
+                            <h3 className={'text-09'}>{hasErrors.message}</h3>
                         </>
                         :
                         data && <Table data={data} />

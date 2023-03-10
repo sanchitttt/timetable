@@ -173,7 +173,7 @@ function TimetableMobile() {
         </div>
 
         <div style={{ textAlign: 'center' }} className='w-[100%] mt-[50px] flex items-center justify-center align-center w-[80%] h-[100%] overflow-scroll '>
-          <h1 className='text-[24px] font-bold'>Please use a desktop screen or tablet for viewing the timetable</h1>
+         <Text24px>Please use a desktop screen or tablet for viewing the timetable</Text24px>
           {/* {data && <Table data={data} />} */}
         </div>
       </div>
